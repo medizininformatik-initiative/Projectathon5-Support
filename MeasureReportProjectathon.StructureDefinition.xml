@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="ae2d0bbb-246a-4cc5-90f6-50e914ace469" />
+  <meta>
+    <versionId value="14" />
+    <lastUpdated value="2021-06-08T10:01:15.402+00:00" />
+  </meta>
+  <url value="https://www.medizininformatik-initiative.de/fhir/projectathon-5/StructureDefinition/MeasureReport" />
+  <version value="0.1" />
+  <name value="MeasureReport" />
+  <status value="draft" />
+  <date value="2021-06-08T10:01:15.1602781+00:00" />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/fivews" />
+    <name value="FiveWs Pattern Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="MeasureReport" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/MeasureReport" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="MeasureReport.status">
+      <path value="MeasureReport.status" />
+      <short value="complete" />
+      <fixedCode value="complete" />
+      <mustSupport value="true" />
+    </element>
+    <element id="MeasureReport.type">
+      <path value="MeasureReport.type" />
+      <short value="summary" />
+      <fixedCode value="summary" />
+      <mustSupport value="true" />
+    </element>
+    <element id="MeasureReport.measure">
+      <path value="MeasureReport.measure" />
+      <mustSupport value="true" />
+    </element>
+    <element id="MeasureReport.date">
+      <path value="MeasureReport.date" />
+      <mustSupport value="true" />
+    </element>
+    <element id="MeasureReport.reporter">
+      <path value="MeasureReport.reporter" />
+      <definition value="The organization that is reporting the data." />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Organization" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="MeasureReport.reporter.reference">
+      <path value="MeasureReport.reporter.reference" />
+      <mustSupport value="true" />
+    </element>
+    <element id="MeasureReport.period">
+      <path value="MeasureReport.period" />
+      <mustSupport value="true" />
+    </element>
+    <element id="MeasureReport.group">
+      <path value="MeasureReport.group" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="MeasureReport.group.population">
+      <path value="MeasureReport.group.population" />
+      <definition value="The populations that make up the patients" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="MeasureReport.group.population.extension">
+      <path value="MeasureReport.group.population.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="MeasureReport.group.population.extension:PopulationComparator">
+      <path value="MeasureReport.group.population.extension" />
+      <sliceName value="PopulationComparator" />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="https://www.medizininformatik-initiative.de/fhir/projectathon-5/StructureDefinition/PopulationComparator" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="MeasureReport.group.population.count">
+      <path value="MeasureReport.group.population.count" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+  </differential>
+</StructureDefinition>

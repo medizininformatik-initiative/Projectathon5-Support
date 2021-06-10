@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="7e561923-a48e-4cc3-bd88-1b6f4afdeb96" />
+  <meta>
+    <versionId value="7" />
+    <lastUpdated value="2021-06-08T10:01:10.471+00:00" />
+  </meta>
+  <url value="https://www.medizininformatik-initiative.de/fhir/projectathon-5/StructureDefinition/Measure" />
+  <version value="0.1" />
+  <name value="Measure" />
+  <status value="draft" />
+  <date value="2021-06-08T10:01:10.1672401+00:00" />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="workflow" />
+    <uri value="http://hl7.org/fhir/workflow" />
+    <name value="Workflow Pattern" />
+  </mapping>
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/fivews" />
+    <name value="FiveWs Pattern Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="objimpl" />
+    <uri value="http://hl7.org/fhir/object-implementation" />
+    <name value="Object Implementation Information" />
+  </mapping>
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Measure" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Measure" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Measure">
+      <path value="Measure" />
+      <short value="Standard-Anfrage-Ressource für eine MAUS" />
+      <definition value="Diese Ressource soll als &quot;Briefinhalt&quot; einer MAUS (MAchbarkeitsUnterSuchung) dienen, in denen alle relevanten Inhalte rund um eine MAUS enthalten sind. Einige Attribute sind aber auch mehr ein vager Vorschlag (P_proposal) als eine konkreter Idee" />
+    </element>
+    <element id="Measure.url">
+      <path value="Measure.url" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Measure.subject[x]">
+      <path value="Measure.subject[x]" />
+      <short value="E.g. Patient, Practitioner, RelatedPerson, Organization, Location, Device, Observation" />
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+      <mustSupport value="true" />
+      <binding>
+        <strength value="required" />
+        <valueSet value="https://www.medizininformatik-initiative.de/fhir/projectathon-5/ValueSet/SubjectType" />
+      </binding>
+    </element>
+    <element id="Measure.date">
+      <path value="Measure.date" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Measure.group">
+      <path value="Measure.group" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Measure.group.population">
+      <path value="Measure.group.population" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Measure.group.population.criteria">
+      <path value="Measure.group.population.criteria" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Measure.group.population.criteria.language">
+      <path value="Measure.group.population.criteria.language" />
+      <short value="application/x-fhir-query" />
+      <fixedCode value="application/x-fhir-query" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Measure.group.population.criteria.expression">
+      <path value="Measure.group.population.criteria.expression" />
+      <mustSupport value="true" />
+    </element>
+  </differential>
+</StructureDefinition>

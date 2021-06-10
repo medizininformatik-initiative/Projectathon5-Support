@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="PopulationComparator" />
+  <meta>
+    <versionId value="4" />
+    <lastUpdated value="2021-06-08T10:01:20.498+00:00" />
+  </meta>
+  <url value="https://www.medizininformatik-initiative.de/fhir/projectathon-5/StructureDefinition/PopulationComparator" />
+  <version value="0.1" />
+  <name value="ExtensionPopulationComparator" />
+  <status value="draft" />
+  <date value="2021-06-08T10:01:20.2537491+00:00" />
+  <description value="The extension describes how the population count should be understood and represented - whether the actual value is less than the stated value due to data protection regulations; e.g. if the comparator is &quot;&lt;&quot; , then the real value is &lt; stated value." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element" />
+    <expression value="MeasureReport.group.population" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="https://www.medizininformatik-initiative.de/fhir/projectathon-5/StructureDefinition/PopulationComparator" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <short value="Comparator" />
+      <definition value="How the population count should be understood and represented - whether the actual value is less than the stated value due to data protection regulations; e.g. if the comparator is &quot;&lt;&quot; , then the real value is &lt; stated value." />
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+      <fixedCodeableConcept>
+        <coding>
+          <system value="http://hl7.org/fhir/quantity-comparator" />
+          <code value="&lt;" />
+        </coding>
+      </fixedCodeableConcept>
+    </element>
+  </differential>
+</StructureDefinition>
