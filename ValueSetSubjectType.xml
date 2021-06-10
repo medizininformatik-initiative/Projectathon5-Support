@@ -1,0 +1,31 @@
+<ValueSet xmlns="http://hl7.org/fhir">
+    <id value="ValueSetSubjectType" />
+    <url value="https://www.medizininformatik-initiative.de/fhir/projectathon-5/ValueSet/SubjectType" />
+    <version value="0.1" />
+    <name value="ValueSetSubjectType" />
+    <title value="ValueSet - SubjectType" />
+    <status value="draft" />
+   <compose>
+	<include>
+		<system value="http://hl7.org/fhir/resource-types"/>
+		<concept>
+			<code value="Patient"/>
+		</concept>
+		<concept>
+			<code value="Practitioner"/>
+		</concept>
+		<concept>
+			<code value="Organization"/>
+		</concept>
+		<concept>
+			<code value="Location"/>
+		</concept>
+		<concept>
+			<code value="Device"/>
+		</concept>
+		<concept>
+			<code value="Observation"/>
+		</concept>
+	</include>
+	</compose>
+</ValueSet>
